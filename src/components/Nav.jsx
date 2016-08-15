@@ -1,7 +1,7 @@
-var Nav = (props) => (
+var Nav = ({onYouTubeSearch}) => (
   <nav className="navbar">
     <div className="col-md-6 col-md-offset-3">
-      <Search onYouTubeSearch={props.onYouTubeSearch}/>
+      <Search onYouTubeSearch={onYouTubeSearch}/>
     </div>
   </nav>
 );

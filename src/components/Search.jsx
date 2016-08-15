@@ -2,7 +2,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      textVal: ""
+      textVal: ''
     };
   }
 
@@ -13,7 +13,7 @@ class Search extends React.Component {
   }
 
   handleEnterKey(target) {
-    if(target.charCode===13) {
+    if (target.charCode === 13) {
       this.props.onYouTubeSearch(this.state.textVal);
     }
   }
@@ -21,17 +21,21 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-bar form-inline">
-        <input className="form-control" type="text" onKeyPress={(target) => this.handleEnterKey(target)} onChange={ (e) => this.handleTextInput(e.target.value)} />
-        <button className="btn hidden-sm-down" onClick={() => this.props.onYouTubeSearch(this.state.textVal) }>
+        <input
+          className="form-control"
+          type="text"
+          onKeyPress={ (target) => this.handleEnterKey(target) }
+          onChange={ (e) => this.handleTextInput(e.target.value) } />
+        <button
+          className="btn hidden-sm-down"
+          onClick={ () => this.props.onYouTubeSearch(this.state.textVal) }>
           <span className="glyphicon glyphicon-search"></span>
         </button>
       </div> 
     );
   }
-};
+}
 
-
-//<input className="form-control" type="text" onChange={ (e) => props.onYouTubeSearch(e.target.value) } />
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
 window.Search = Search;
